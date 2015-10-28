@@ -24,6 +24,8 @@ void Menu::unload()
 	
 }
 
+void Menu::move(int x,int y){}
+
 void Menu::draw(RenderWindow &window)
 {
 	window.draw(play);

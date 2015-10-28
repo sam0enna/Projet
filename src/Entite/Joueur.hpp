@@ -1,30 +1,32 @@
 
-#include <SFML/system.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
+
+#include "Entite.hpp" 
  
-#define NB_BLOC 100
-#define TAILLE_MARIO 34
-#define LARGEUR_FENETRE 408
-#define HAUTEUR_FENETRE 408
+#define JOUEUR_STOP 0
+#define JOUEUR_MARCHE_1 1
+#define JOUEUR_MARCHE_2 2
  
-enum {VIDE, MUR, CAISSE, OBJECTIF, MARIO, CAISSE_OK};
+using namespace std;
+using namespace sf;
  
-class Joueur
+class Joueur : public Entite
 {
     public :
  
     Joueur();
     ~Joueur();
-    void display();
-    void moove(sf::RenderWindow& app);
-    void position();
-    void displayCard();
-    sf::Sprite getSprite();
- 
+    
+    void setPosition(int x, int y);
+    void move(int x,int y);
+    void draw(RenderWindow &window);
+    void anim_stop(RenderWindow &window);
+    
     private :
- 
-    sf::Image *m_Mario, *m_Blanc;
-    sf::Sprite *m_sMario, *m_sBlanc;
+		Texture stop;
+		Texture marche1;
+		Texture marche2;
+		int animation;
  
 };

@@ -2,8 +2,12 @@
 #define ENTITE_H
 
 #include <SFML/Graphics.hpp>
+#include "../Screen/ScreenState.hpp"
 
-class Entite : public Sprite
+using namespace std;
+using namespace sf;
+
+class Entite
 {
 			
 	public:
@@ -11,8 +15,11 @@ class Entite : public Sprite
 		~Entite();
 	    virtual bool collision(Entite& entite);
 	    virtual ScreenState* update() ;
+	    
+	protected:
+		Sprite sprite;
 		
-}
+};
 
 
 #endif

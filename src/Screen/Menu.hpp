@@ -14,6 +14,7 @@ class Menu : public ScreenState
 		~Menu();
 		void load();
 		void unload();
+		void move(int x,int y);
 		void draw(RenderWindow &window);
 		
 	private :

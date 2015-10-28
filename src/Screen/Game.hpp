@@ -7,6 +7,8 @@
 
 #include "ScreenState.hpp"
 #include "TileMap.hpp"
+#include "../Entite/Entite.hpp"
+#include "../Entite/Joueur.hpp"
 
 class Game : public ScreenState 
 {
@@ -16,11 +18,14 @@ class Game : public ScreenState
 		void load();
 		void unload();
 		void draw(RenderWindow &window);
+		void move(int x,int y);
+		Joueur* getJoueur();
 		
 	private :
 		TileMap map;
 		Texture texture;
 		Sprite background;
+		Joueur* perso;
 
 };
 #endif //GAME_H

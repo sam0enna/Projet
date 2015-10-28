@@ -52,6 +52,11 @@ void ScreenManager::setCurrentScreen(ScreenState* new_screen)
 	}
 }
 
+ScreenState* ScreenManager::getCurrentScreen()
+{
+	return currentScreen_;
+}
+
 void ScreenManager::loadScreen()
 {
 	currentScreen_->load();

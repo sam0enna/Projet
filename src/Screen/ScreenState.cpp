@@ -15,4 +15,5 @@ int ScreenState::getType()
 }
 void ScreenState::load(){}
 void ScreenState::unload(){}
+void ScreenState::move(int x,int y){}
 void ScreenState::draw(RenderWindow &window){}

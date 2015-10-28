@@ -18,6 +18,7 @@ class ScreenState
 		int getType();
 		virtual void load();
 		virtual void unload();
+		virtual void move(int x,int y);
 		virtual void draw(RenderWindow &window);
 		
 	protected:

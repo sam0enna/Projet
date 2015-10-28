@@ -18,6 +18,7 @@ class ScreenManager
 		~ScreenManager();
 		void init();
 		void setCurrentScreen(ScreenState*);
+		ScreenState* getCurrentScreen();
 		void loadScreen();
 		void draw(RenderWindow &window);
 	

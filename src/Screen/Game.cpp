@@ -3,6 +3,7 @@
 Game::Game()
 {
 	type = GAME;
+	perso = new Joueur();
 }
 
 Game::~Game()
@@ -52,6 +53,11 @@ void Game::load()
 	background.setTexture(texture);
 	background.setTextureRect({ 0, 0, 1280, 480 });//la texture se répète dans un bloc de 1280*480
 	
+	//positionnement du perso
+	perso->setPosition(0,448);
+	//448 car il y a 16 rangées de tuiles, les deux dernières représentent le sol.
+	//on veut que le coin gauche du perso touche le sol (donc la 14eme rangée)
+	//14*32=448 (32 la taille d'une tuile)
 }
 
 void Game::unload()
@@ -63,4 +69,15 @@ void Game::draw(RenderWindow &window)
 {
 	window.draw(background);
 	window.draw(map);
+	perso->draw(window);
+}
+
+void Game::move(int x,int y)
+{
+	perso->move(x,y);
+}
+
+Joueur* Game::getJoueur()
+{
+	return perso;
 }

@@ -37,6 +37,14 @@ int main() {
 							manager.setCurrentScreen(new Game());
 							break;
 							
+						case Keyboard::Left:
+							manager.getCurrentScreen()->move(-5,0);
+							break;
+						
+						case Keyboard::Right:
+							manager.getCurrentScreen()->move(5,0);
+							break;
+							
 						default:
 							break;
 					}
