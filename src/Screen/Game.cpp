@@ -58,6 +58,11 @@ void Game::load()
 	//448 car il y a 16 rangées de tuiles, les deux dernières représentent le sol.
 	//on veut que le coin gauche du perso touche le sol (donc la 14eme rangée)
 	//14*32=448 (32 la taille d'une tuile)
+	
+	t.loadFromFile("res/box_neutre.png");
+	blocneutre =new Bloc(t,15,448);
+	(new Neutre(blocneutre))->setCassable();
+
 }
 
 void Game::unload()
@@ -70,6 +75,7 @@ void Game::draw(RenderWindow &window)
 	window.draw(background);
 	window.draw(map);
 	perso->draw(window);
+	blocneutre->display(window);
 }
 
 void Game::move(int x,int y)
