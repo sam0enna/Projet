@@ -6,7 +6,7 @@ Bloc::Bloc(sf::Texture& texture,int x, int y){
 	sprite->setTexture(texture);
 	sprite->setPosition( x, y);
 	sprite->scale(0.25f,0.25f);
-	sprite.setOrigin(0,128);
+	sprite->setOrigin(0,128);
 }
 
 Bloc::~Bloc(){
