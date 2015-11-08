@@ -59,9 +59,13 @@ void Game::load()
 	//on veut que le coin gauche du perso touche le sol (donc la 14eme rangée)
 	//14*32=448 (32 la taille d'une tuile)
 	
-	t.loadFromFile("res/box_neutre.png");
-	blocneutre =new Bloc(t,15,448);
-	(new Neutre(blocneutre))->setCassable();
+	neutre.loadFromFile("res/box_neutre.png");
+	cassable.loadFromFile("res/box_cassable.png");
+	blocs.push_back(new Bloc(15,448));
+	blocs.push_back(new Bloc(60,448));
+	
+	(new Neutre(blocs.at(0),neutre))->setCassable();
+	(new Cassable(blocs.at(1),cassable))->setCassable();
 
 }
 
@@ -75,15 +79,20 @@ void Game::draw(RenderWindow &window)
 	window.draw(background);
 	window.draw(map);
 	perso->draw(window);
-	blocneutre->display(window);
+	for(vector<Bloc*>::iterator it = blocs.begin(); it!=blocs.end();++it)
+		(*it)->display(window);
+	
 }
 
 void Game::move(int x,int y)
 {
 	perso->move(x,y);
+	perso->collision(&blocs);
 }
 
 Joueur* Game::getJoueur()
 {
 	return perso;
 }
+
+

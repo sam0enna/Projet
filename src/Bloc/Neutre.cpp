@@ -1,6 +1,6 @@
 #include "Neutre.hpp"
 
-Neutre::Neutre(Bloc* bloc):Decorator(bloc){
+Neutre::Neutre(Bloc* bloc,sf::Texture& texture):Decorator(bloc,texture){
 }
 
 void Neutre::setCassable(){

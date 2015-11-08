@@ -58,4 +58,18 @@ void Joueur::anim_stop(RenderWindow &window)
     window.draw(sprite);
 }
 
-
+void Joueur::collision(vector<Bloc*>* blocs)
+{
+	vector<Bloc*>::iterator it = blocs->begin();
+	while(it != blocs->end())
+	{
+		if((*it)->getSprite()->getGlobalBounds().intersects(sprite.getGlobalBounds()) && (*it)->estCassable())
+		{	
+			Bloc* b = *it;	
+			it = blocs->erase(it);
+			delete b;
+		}
+		else
+			++it;
+	}
+}

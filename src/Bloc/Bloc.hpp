@@ -11,12 +11,14 @@ class Bloc
 		bool cassable;
 	
 	public:
-		Bloc (sf::Texture& texture,int x, int y);
+		Bloc (int x, int y);
 		~Bloc();
 		bool estCassable();
 		void setCassable(bool);
-		virtual Bloc* quandCasse();
+		Bloc* quandCasse();
 		void display(RenderWindow& window);
+		Sprite* getSprite();
+		
 };
 
 #endif

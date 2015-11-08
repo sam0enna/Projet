@@ -13,7 +13,7 @@ class Entite
 	public:
 		Entite();
 		~Entite();
-	    virtual bool collision(Entite& entite);
+		Sprite getSprite();
 	    virtual ScreenState* update() ;
 	    
 	protected:

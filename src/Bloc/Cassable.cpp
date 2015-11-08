@@ -1,6 +1,6 @@
 #include "Cassable.hpp"
 
-Cassable::Cassable(Bloc* bloc):Decorator(bloc){
+Cassable::Cassable(Bloc* bloc,sf::Texture& texture):Decorator(bloc,texture){
 }
 
 void Cassable::setCassable(){

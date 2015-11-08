@@ -4,8 +4,9 @@ Entite::Entite(){}
 
 Entite::~Entite(){}
 
-bool Entite::collision(Entite& entite)
+Sprite Entite::getSprite()
 {
+	return sprite;
 }
 
 ScreenState* Entite::update(){}

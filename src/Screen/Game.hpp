@@ -1,6 +1,7 @@
 #ifndef GAME_H
 #define GAME_H
 #include <iostream>
+#include <vector>
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
@@ -26,10 +27,11 @@ class Game : public ScreenState
 	private :
 		TileMap map;
 		Texture texture;
-		Texture t;
+		Texture neutre;
+		Texture cassable;
 		Sprite background;
 		Joueur* perso;
-		Bloc* blocneutre;
+		vector<Bloc*> blocs;
 
 };
 #endif //GAME_H

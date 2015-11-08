@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 
 #include "Entite.hpp" 
+#include "../Bloc/Bloc.hpp"
  
 #define JOUEUR_STOP 0
 #define JOUEUR_MARCHE_1 1
@@ -22,6 +23,7 @@ class Joueur : public Entite
     void move(int x,int y);
     void draw(RenderWindow &window);
     void anim_stop(RenderWindow &window);
+    void collision(vector<Bloc*>* blocs);
     
     private :
 		Texture stop;

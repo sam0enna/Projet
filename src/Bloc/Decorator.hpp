@@ -10,7 +10,7 @@ class Decorator {
 		Bloc* bloc;
 		
 	public :
-		Decorator(Bloc*);
+		Decorator(Bloc*,sf::Texture&);
 		~Decorator();
 		virtual void setCassable();
 };
