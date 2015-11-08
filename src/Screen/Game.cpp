@@ -61,7 +61,7 @@ void Game::load()
 	
 	neutre.loadFromFile("res/box_neutre.png");
 	cassable.loadFromFile("res/box_cassable.png");
-	blocs.push_back(new Bloc(253,448));
+	blocs.push_back(new Bloc(500,448));
 	blocs.push_back(new Bloc(60,448));
 	
 	(new Neutre(blocs.at(0),neutre))->setCassable();

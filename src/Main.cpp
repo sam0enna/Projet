@@ -21,6 +21,8 @@ int main() {
 	ScreenManager manager;
 	manager.init();
     // on fait tourner la boucle principale
+    View vue(sf::Vector2f(320, 240), sf::Vector2f(640, 480));
+    window.setView(vue);
     while (window.isOpen())
     {
         // on gère les évènements
@@ -51,6 +53,17 @@ int main() {
 			}
            
         }
+        
+        if(Game* scene = dynamic_cast<Game*>(manager.getCurrentScreen())){
+			Vector2f position  = scene->getJoueur()->getPosition();
+			if(position.x < 320)
+				position.x = 320;
+			if(position.y > 240)
+				position.y = 240;
+			
+			vue.setCenter(position);
+		}
+		window.setView(vue);
         // on dessine le niveau
         window.clear();
         manager.draw(window);

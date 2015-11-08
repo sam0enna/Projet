@@ -20,6 +20,7 @@ class Joueur : public Entite
     ~Joueur();
     
     void setPosition(int x, int y);
+    Vector2f getPosition();
     void move(int x,int y);
     void draw(RenderWindow &window);
     void anim_stop(RenderWindow &window);

@@ -22,6 +22,11 @@ void Joueur::setPosition(int x,int y)
 	sprite.setPosition(x,y);	
 }
 
+Vector2f Joueur::getPosition()
+{
+	return sprite.getPosition();
+}
+
 void Joueur::move(int x, int y)
 {
 	if(x>0){
