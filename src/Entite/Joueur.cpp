@@ -63,15 +63,15 @@ void Joueur::collision(vector<Bloc*>* blocs,int x,int y)
 	vector<Bloc*>::iterator it = blocs->begin();
 	while(it != blocs->end())
 	{
-		if((*it)->getSprite()->getGlobalBounds().intersects(sprite.getGlobalBounds()) && (*it)->estCassable())
+		if((*it)->getSprite()->getGlobalBounds().intersects(sprite.getGlobalBounds()) && (*it)->estCassable())//collision avec un bloc cassable
 		{	
 			Bloc* b = *it;	
 			it = blocs->erase(it);
 			delete b;
 		}
-		else if((*it)->getSprite()->getGlobalBounds().intersects(sprite.getGlobalBounds()))
+		else if((*it)->getSprite()->getGlobalBounds().intersects(sprite.getGlobalBounds()))//collision avec un bloc neutre
 		{
-			sprite.move(-x,-y);
+			sprite.move(-x,-y);//annulation du mouvement
 			++it;
 		}
 		else
