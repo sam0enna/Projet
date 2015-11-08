@@ -23,7 +23,7 @@ class Joueur : public Entite
     void move(int x,int y);
     void draw(RenderWindow &window);
     void anim_stop(RenderWindow &window);
-    void collision(vector<Bloc*>* blocs);
+    void collision(vector<Bloc*>* blocs,int x, int y);
     
     private :
 		Texture stop;

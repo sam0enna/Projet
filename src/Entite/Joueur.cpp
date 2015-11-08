@@ -58,7 +58,7 @@ void Joueur::anim_stop(RenderWindow &window)
     window.draw(sprite);
 }
 
-void Joueur::collision(vector<Bloc*>* blocs)
+void Joueur::collision(vector<Bloc*>* blocs,int x,int y)
 {
 	vector<Bloc*>::iterator it = blocs->begin();
 	while(it != blocs->end())
@@ -68,6 +68,11 @@ void Joueur::collision(vector<Bloc*>* blocs)
 			Bloc* b = *it;	
 			it = blocs->erase(it);
 			delete b;
+		}
+		else if((*it)->getSprite()->getGlobalBounds().intersects(sprite.getGlobalBounds()))
+		{
+			sprite.move(-x,-y);
+			++it;
 		}
 		else
 			++it;

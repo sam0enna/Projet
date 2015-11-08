@@ -61,7 +61,7 @@ void Game::load()
 	
 	neutre.loadFromFile("res/box_neutre.png");
 	cassable.loadFromFile("res/box_cassable.png");
-	blocs.push_back(new Bloc(15,448));
+	blocs.push_back(new Bloc(253,448));
 	blocs.push_back(new Bloc(60,448));
 	
 	(new Neutre(blocs.at(0),neutre))->setCassable();
@@ -87,7 +87,7 @@ void Game::draw(RenderWindow &window)
 void Game::move(int x,int y)
 {
 	perso->move(x,y);
-	perso->collision(&blocs);
+	perso->collision(&blocs,x,y);
 }
 
 Joueur* Game::getJoueur()
