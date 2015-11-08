@@ -1,3 +1,11 @@
+/*!
+* \file 
+* \brief 
+* \author 
+* \author 
+* \date 
+*/
+
 #ifndef SCREENMANAGER_H
 #define SCREENMANAGER_H
 
@@ -11,6 +19,10 @@
 using namespace std;
 using namespace sf;
 
+/*!
+* \class 
+* \brief 
+*/
 class ScreenManager
 {
 	public :
@@ -23,7 +35,7 @@ class ScreenManager
 		void draw(RenderWindow &window);
 	
 	private :		
-		ScreenState* currentScreen_;
+		ScreenState* currentScreen_;//!<
 };
 
 #endif //SCREENMANAGER_H
