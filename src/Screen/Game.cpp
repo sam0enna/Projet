@@ -81,13 +81,16 @@ void Game::draw(RenderWindow &window)
 	perso->draw(window);
 	for(vector<Bloc*>::iterator it = blocs.begin(); it!=blocs.end();++it)
 		(*it)->display(window);
+	for(vector<Entite*>::iterator at = entites.begin(); at!=entites.end();++at)
+		(*at)->display(window);
+		
 	
 }
 
 void Game::move(int x,int y)
 {
 	perso->move(x,y);
-	perso->collision(&blocs,x,y);
+	perso->collision(&blocs,&entites,x,y);
 }
 
 Joueur* Game::getJoueur()

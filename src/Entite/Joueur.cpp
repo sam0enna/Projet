@@ -11,6 +11,7 @@ Joueur::Joueur()
     sprite.setOrigin(0,256);//coin inférieur gauche.
     sprite.scale(0.25f,0.25f);
     animation = JOUEUR_STOP;
+    vie = 3;
 }
 
 Joueur::~Joueur() 
@@ -63,7 +64,7 @@ void Joueur::anim_stop(RenderWindow &window)
     window.draw(sprite);
 }
 
-void Joueur::collision(vector<Bloc*>* blocs,int x,int y)
+void Joueur::collision(vector<Bloc*>* blocs,vector<Entite*>* entites,int x,int y)
 {
 	vector<Bloc*>::iterator it = blocs->begin();
 	while(it != blocs->end())
@@ -72,7 +73,11 @@ void Joueur::collision(vector<Bloc*>* blocs,int x,int y)
 		{	
 			Bloc* b = *it;	
 			it = blocs->erase(it);
+			Etoile* star = new Etoile();
+			star->setPosition(b->getPosition().x,b->getPosition().y);
+			entites->push_back(star);
 			delete b;
+			
 		}
 		else if((*it)->getSprite()->getGlobalBounds().intersects(sprite.getGlobalBounds()))//collision avec un bloc neutre
 		{
@@ -82,4 +87,19 @@ void Joueur::collision(vector<Bloc*>* blocs,int x,int y)
 		else
 			++it;
 	}
+}
+
+int Joueur::getVie()
+{
+	return vie;
+}
+
+void Joueur::vieMoins()
+{
+	--vie;
+}
+
+void Joueur::viePlus()
+{
+	++vie;
 }

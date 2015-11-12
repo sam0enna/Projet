@@ -14,7 +14,7 @@ class Entite
 		Entite();
 		~Entite();
 		Sprite getSprite();
-	    virtual ScreenState* update() ;
+	    void display(RenderWindow& window);
 	    
 	protected:
 		Sprite sprite;

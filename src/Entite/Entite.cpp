@@ -9,4 +9,4 @@ Sprite Entite::getSprite()
 	return sprite;
 }
 
-ScreenState* Entite::update(){}
+void Entite::display(RenderWindow& window){}

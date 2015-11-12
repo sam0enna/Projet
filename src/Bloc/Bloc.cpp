@@ -20,11 +20,11 @@ void Bloc::setCassable(bool casse){
 	cassable = casse;
 }
 
-Bloc* Bloc :: quandCasse(){ // lorsqu'une une entité essaye de casser un bloc
+Bloc* Bloc::quandCasse(){ // lorsqu'une une entité essaye de casser un bloc
 	delete sprite;
 }
  
-void Bloc ::display(RenderWindow& window){ //pour afficher un bloc 
+void Bloc::display(RenderWindow& window){ //pour afficher un bloc 
 	if(sprite != nullptr)
 		window.draw(*sprite);
 }
@@ -32,4 +32,8 @@ void Bloc ::display(RenderWindow& window){ //pour afficher un bloc
 Sprite* Bloc::getSprite()
 {
 	return sprite;
+}
+
+Vector2f Bloc::getPosition(){
+	return sprite->getPosition();
 }

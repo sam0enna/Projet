@@ -18,6 +18,7 @@ class Bloc
 		Bloc* quandCasse();
 		void display(RenderWindow& window);
 		Sprite* getSprite();
+		Vector2f getPosition();
 		
 };
 

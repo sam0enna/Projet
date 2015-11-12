@@ -9,6 +9,7 @@
 #include "ScreenState.hpp"
 #include "TileMap.hpp"
 #include "../Entite/Entite.hpp"
+#include "../Entite/Etoile.hpp"
 #include "../Entite/Joueur.hpp"
 #include "../Bloc/Neutre.hpp"
 #include "../Bloc/Cassable.hpp"
@@ -32,6 +33,7 @@ class Game : public ScreenState
 		Sprite background;
 		Joueur* perso;
 		vector<Bloc*> blocs;
+		vector<Entite*> entites;
 
 };
 #endif //GAME_H

@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 
 #include "Entite.hpp" 
+#include "Etoile.hpp"
 #include "../Bloc/Bloc.hpp"
  
 #define JOUEUR_STOP 0
@@ -24,12 +25,16 @@ class Joueur : public Entite
     void move(int x,int y);
     void draw(RenderWindow &window);
     void anim_stop(RenderWindow &window);
-    void collision(vector<Bloc*>* blocs,int x, int y);
+    void collision(vector<Bloc*>* blocs,vector<Entite*>* entites,int x, int y);
+    int getVie();
+    void vieMoins();
+    void viePlus();
     
     private :
 		Texture stop;
 		Texture marche1;
 		Texture marche2;
 		int animation;
+		int vie;
  
 };
