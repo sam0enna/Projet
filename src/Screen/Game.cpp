@@ -67,6 +67,7 @@ void Game::load()
 	(new Neutre(blocs.at(0),neutre))->setCassable();
 	(new Cassable(blocs.at(1),cassable))->setCassable();
 
+
 }
 
 void Game::unload()
