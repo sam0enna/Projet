@@ -15,11 +15,10 @@ class Etoile : public Entite{
 		~Etoile();
 		void setPosition(int x, int y);
 		Sprite getSprite();
-		void display(RenderWindow& window);
+		void draw(RenderWindow& window);
 	    
 	protected:
 		Texture star;
-		Sprite sprite;
 		
 };
 

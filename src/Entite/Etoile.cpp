@@ -3,6 +3,7 @@
 Etoile::Etoile(){
 	star.loadFromFile("res/star.png");
 	sprite.setTexture(star);
+	sprite.setOrigin(0,128);
 	sprite.scale(0.25f,0.25f);
 }
 
@@ -17,6 +18,6 @@ Sprite Etoile::getSprite()
 	return sprite;
 }
 
-void Etoile::display(RenderWindow& window){
+void Etoile::draw(RenderWindow& window){
 	window.draw(sprite);
 }

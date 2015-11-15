@@ -63,9 +63,19 @@ void Game::load()
 	cassable.loadFromFile("res/box_cassable.png");
 	blocs.push_back(new Bloc(500,448));
 	blocs.push_back(new Bloc(60,448));
+	blocs.push_back(new Bloc(256,352));
 	
 	(new Neutre(blocs.at(0),neutre))->setCassable();
 	(new Cassable(blocs.at(1),cassable))->setCassable();
+	(new Cassable(blocs.at(2),cassable))->setCassable();
+	
+	entites.push_back(new Etoile());
+	(entites.at(0))->setPosition(60,448);
+	
+	entites.push_back(new Etoile());
+	(entites.at(1))->setPosition(256,352);
+	
+
 
 
 }
@@ -80,10 +90,13 @@ void Game::draw(RenderWindow &window)
 	window.draw(background);
 	window.draw(map);
 	perso->draw(window);
-	for(vector<Bloc*>::iterator it = blocs.begin(); it!=blocs.end();++it)
+	for(vector<Entite*>::iterator at = entites.begin(); at!=entites.end();++at){
+		(*at)->draw(window);
+	
+	for(vector<Bloc*>::iterator it = blocs.begin(); it!=blocs.end();++it){
 		(*it)->display(window);
-	for(vector<Entite*>::iterator at = entites.begin(); at!=entites.end();++at)
-		(*at)->display(window);
+	}	
+}
 		
 	
 }
@@ -91,7 +104,7 @@ void Game::draw(RenderWindow &window)
 void Game::move(int x,int y)
 {
 	perso->move(x,y);
-	perso->collision(&blocs,&entites,x,y);
+	perso->collision(&blocs,x,y);
 }
 
 Joueur* Game::getJoueur()

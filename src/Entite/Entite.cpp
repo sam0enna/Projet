@@ -9,4 +9,6 @@ Sprite Entite::getSprite()
 	return sprite;
 }
 
-void Entite::display(RenderWindow& window){}
+void Entite::draw(RenderWindow& window){}
+
+void Entite::setPosition(int x,int y){}

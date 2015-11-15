@@ -25,7 +25,7 @@ class Joueur : public Entite
     void move(int x,int y);
     void draw(RenderWindow &window);
     void anim_stop(RenderWindow &window);
-    void collision(vector<Bloc*>* blocs,vector<Entite*>* entites,int x, int y);
+    void collision(vector<Bloc*>* blocs,int x, int y);
     int getVie();
     void vieMoins();
     void viePlus();

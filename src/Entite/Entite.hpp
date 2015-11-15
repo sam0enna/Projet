@@ -14,7 +14,8 @@ class Entite
 		Entite();
 		~Entite();
 		Sprite getSprite();
-	    void display(RenderWindow& window);
+	    virtual void draw(RenderWindow& window);
+	    virtual void setPosition(int,int);
 	    
 	protected:
 		Sprite sprite;

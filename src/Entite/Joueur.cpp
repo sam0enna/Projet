@@ -64,18 +64,15 @@ void Joueur::anim_stop(RenderWindow &window)
     window.draw(sprite);
 }
 
-void Joueur::collision(vector<Bloc*>* blocs,vector<Entite*>* entites,int x,int y)
+void Joueur::collision(vector<Bloc*>* blocs,int x,int y)
 {
 	vector<Bloc*>::iterator it = blocs->begin();
 	while(it != blocs->end())
 	{
 		if((*it)->getSprite()->getGlobalBounds().intersects(sprite.getGlobalBounds()) && (*it)->estCassable())//collision avec un bloc cassable
 		{	
-			Bloc* b = *it;	
+			Bloc* b = *it;
 			it = blocs->erase(it);
-			Etoile* star = new Etoile();
-			star->setPosition(b->getPosition().x,b->getPosition().y);
-			entites->push_back(star);
 			delete b;
 			
 		}
