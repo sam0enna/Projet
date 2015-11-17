@@ -9,15 +9,6 @@ Etoile::Etoile(){
 
 Etoile::~Etoile(){}
 
-void Etoile::setPosition(int x,int y){
-	sprite.setPosition(x,y);
-}
-
-Sprite Etoile::getSprite()
-{
-	return sprite;
-}
-
 void Etoile::draw(RenderWindow& window){
 	window.draw(sprite);
 }

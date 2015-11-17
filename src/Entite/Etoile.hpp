@@ -14,7 +14,6 @@ class Etoile : public Entite{
 		Etoile();
 		~Etoile();
 		void setPosition(int x, int y);
-		Sprite getSprite();
 		void draw(RenderWindow& window);
 	    
 	protected:

@@ -7,19 +7,21 @@
 using namespace std;
 using namespace sf;
 
-class Entite
+class Monstre : public Entite
 {
 			
 	public:
-		Entite();
-		~Entite();
+		Monstre(string nom);
+		~Monstre();
 		Sprite getSprite();
-	    virtual void draw(RenderWindow& window);
+	    void draw(RenderWindow& window);
 	    void setPosition(int,int);
+	    void estMort();
 	    
-	protected:
-		Sprite sprite;
-		ActionBonus action;
+	private:
+		Texture vivant;
+		Texture mort;
+
 		
 };
 

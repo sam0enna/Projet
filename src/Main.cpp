@@ -3,6 +3,7 @@
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 
 #include "Screen/ScreenManager.hpp"
 #include "Screen/ScreenState.hpp"
@@ -62,6 +63,10 @@ int main() {
 				position.y = 240;
 			
 			vue.setCenter(position);
+			
+			sf::Music music;
+			if (music.openFromFile("res/music.wav"))
+				music.play();
 		}
 		window.setView(vue);
         // on dessine le niveau

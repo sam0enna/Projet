@@ -1,6 +1,7 @@
 
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
+#include <stdlib.h>
 
 #include "Entite.hpp" 
 #include "Etoile.hpp"
@@ -13,7 +14,7 @@
 using namespace std;
 using namespace sf;
  
-class Joueur : public Entite
+class Joueur
 {
     public :
  
@@ -25,7 +26,8 @@ class Joueur : public Entite
     void move(int x,int y);
     void draw(RenderWindow &window);
     void anim_stop(RenderWindow &window);
-    void collision(vector<Bloc*>* blocs,int x, int y);
+    void collisionBloc(vector<Bloc*>* blocs,int x, int y);
+    void collisionEntites(vector<Entite*>* entites);
     int getVie();
     void vieMoins();
     void viePlus();

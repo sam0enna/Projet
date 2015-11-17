@@ -13,7 +13,6 @@ Game::~Game()
 
 void Game::load()
 {
-
 // on définit le niveau à l'aide de numéro de tuiles
     const int level[] =
             {
@@ -70,10 +69,10 @@ void Game::load()
 	(new Cassable(blocs.at(2),cassable))->setCassable();
 	
 	entites.push_back(new Etoile());
-	(entites.at(0))->setPosition(60,448);
+	(entites.at(0))->setPosition(63,448);
 	
 	entites.push_back(new Etoile());
-	(entites.at(1))->setPosition(256,352);
+	(entites.at(1))->setPosition(259,352);
 	
 
 
@@ -103,8 +102,10 @@ void Game::draw(RenderWindow &window)
 
 void Game::move(int x,int y)
 {
+	cout << perso->getVie() << endl;
 	perso->move(x,y);
-	perso->collision(&blocs,x,y);
+	perso->collisionBloc(&blocs,x,y);
+	perso->collisionEntites(&entites);
 }
 
 Joueur* Game::getJoueur()

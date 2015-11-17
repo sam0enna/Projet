@@ -3,7 +3,7 @@
 //constructeur
 Bloc::Bloc(int x, int y){
 	sprite = new Sprite();
-	sprite->scale(0.25f,0.25f);
+	sprite->scale(0.30f,0.30f);
 	sprite->setOrigin(0,128);
 	sprite->setPosition( x, y);
 }

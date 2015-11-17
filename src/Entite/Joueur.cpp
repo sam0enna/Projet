@@ -64,7 +64,7 @@ void Joueur::anim_stop(RenderWindow &window)
     window.draw(sprite);
 }
 
-void Joueur::collision(vector<Bloc*>* blocs,int x,int y)
+void Joueur::collisionBloc(vector<Bloc*>* blocs,int x,int y)
 {
 	vector<Bloc*>::iterator it = blocs->begin();
 	while(it != blocs->end())
@@ -80,6 +80,24 @@ void Joueur::collision(vector<Bloc*>* blocs,int x,int y)
 		{
 			sprite.move(-x,-y);//annulation du mouvement
 			++it;
+		}
+		else
+			++it;
+	}
+}
+
+void Joueur::collisionEntites(vector<Entite*>* entites)
+{
+	vector<Entite*>::iterator it = entites->begin();
+	while(it != entites->end())
+	{
+		if((*it)->getSprite().getGlobalBounds().intersects(sprite.getGlobalBounds()))//collision avec un bloc cassable
+		{	
+			if(Etoile* e = dynamic_cast<Etoile*>(*it) ){
+				it = entites->erase(it);
+				delete e;
+				viePlus();
+			}	
 		}
 		else
 			++it;

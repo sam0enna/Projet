@@ -6,7 +6,7 @@
 CC = @ gcc
 CXX = @ g++
 FLAGS = -std=c++0x
-SFMLFLAGS = -lsfml-graphics -lsfml-window -lsfml-system
+SFMLFLAGS = -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 # Liste de tous les objets du projet
 OBJETS = TileMap Entite Etoile Joueur ScreenManager ScreenState Menu Bloc Decorator Neutre Cassable Game
 DEPENDANCES = $(foreach file, $(OBJETS), build/$(file).o)
