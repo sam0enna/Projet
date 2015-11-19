@@ -1,8 +1,8 @@
 #include "Monstre.hpp"
 
 Monstre::Monstre(string nom){
-	vivant.loadFromFile(nom+"_alive.png");
-	mort.loadFromFile(nom+"_dead.png");	
+	vivant.loadFromFile("res/Ennemis/"+nom+".png");
+	mort.loadFromFile("res/Ennemis/"+nom+"_dead.png");	
 	sprite.setTexture(vivant); 
 }
 

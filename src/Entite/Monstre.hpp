@@ -1,5 +1,5 @@
-#ifndef ENTITE_H
-#define ENTITE_H
+#ifndef MONSTRE_H
+#define MONSTRE_H
 
 #include <SFML/Graphics.hpp>
 #include "../Screen/ScreenState.hpp"
