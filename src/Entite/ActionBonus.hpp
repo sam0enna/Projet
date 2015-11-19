@@ -3,6 +3,8 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "Joueur.hpp"
+
 using namespace std;
 using namespace sf;
 
