@@ -4,4 +4,4 @@ ActionBonus::ActionBonus(){}
 
 ActionBonus::~ActionBonus(){}
 
-void ActionBonus::action(){}
+void ActionBonus::doAction(Joueur* j){}

@@ -4,6 +4,6 @@ MalusVie::MalusVie(){}
 
 MalusVie::~MalusVie(){}
 
-void MalusVie::action(Joueur* j){
+void MalusVie::doAction(Joueur* j){
 	j->vieMoins();
 }

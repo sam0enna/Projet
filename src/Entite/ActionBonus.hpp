@@ -2,7 +2,6 @@
 #define ACTION_BONUS_H
 
 #include <SFML/Graphics.hpp>
-
 #include "Joueur.hpp"
 
 using namespace std;
@@ -13,7 +12,7 @@ class ActionBonus {
 	public:
 		ActionBonus();
 		~ActionBonus();
-		virtual void action(Joueur*);
+		virtual void doAction(Joueur*);
 		
 };
 

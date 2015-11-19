@@ -14,3 +14,7 @@ void Entite::draw(RenderWindow& window){}
 void Entite::setPosition(int x,int y){
 	sprite.setPosition(x,y);	
 }
+
+void Entite::doAction(Joueur* j){
+	action->doAction(j);
+}

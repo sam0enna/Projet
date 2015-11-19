@@ -11,7 +11,7 @@ class BonusVie : public ActionBonus{
 	public:
 		BonusVie();
 		~BonusVie();
-		void action(Joueur*);
+		void doAction(Joueur*);
 		
 };
 

@@ -1,9 +1,8 @@
-
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 #include <stdlib.h>
+#include <vector>
 
-#include "Entite.hpp" 
 #include "Etoile.hpp"
 #include "../Bloc/Bloc.hpp"
  
@@ -38,5 +37,6 @@ class Joueur
 		Texture marche2;
 		int animation;
 		int vie;
+		Sprite sprite;
  
 };

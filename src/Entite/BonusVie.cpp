@@ -4,6 +4,6 @@ BonusVie::BonusVie(){}
 
 BonusVie::~BonusVie(){}
 
-void BonusVie::action(Joueur* j){
+void BonusVie::doAction(Joueur* j){
 	j->viePlus();
 }
