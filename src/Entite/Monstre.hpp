@@ -3,6 +3,9 @@
 
 #include <SFML/Graphics.hpp>
 #include "../Screen/ScreenState.hpp"
+#include "Entite.hpp"
+#include "ActionBonus.hpp"
+#include "MalusVie.hpp"
 
 using namespace std;
 using namespace sf;
@@ -14,13 +17,16 @@ class Monstre : public Entite
 		Monstre(string nom);
 		~Monstre();
 		Sprite getSprite();
-	    void draw(RenderWindow& window);
 	    void setPosition(int,int);
-	    void estMort();
+	    void setMort();
+	    bool estVivant();
+	    int doAction();
+	    
 	    
 	private:
-		Texture vivant;
-		Texture mort;
+		Texture t_vivant;
+		Texture t_mort;
+		bool vivant;
 
 		
 };

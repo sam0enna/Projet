@@ -9,9 +9,10 @@
 
 #include "ScreenState.hpp"
 #include "TileMap.hpp"
+#include "../Entite/Joueur.hpp"
 #include "../Entite/Entite.hpp"
 #include "../Entite/Etoile.hpp"
-#include "../Entite/Joueur.hpp"
+#include "../Entite/Monstre.hpp"
 #include "../Bloc/Neutre.hpp"
 #include "../Bloc/Cassable.hpp"
 

@@ -74,7 +74,8 @@ void Game::load()
 	entites.push_back(new Etoile());
 	(entites.at(1))->setPosition(259,352);
 	
-
+	entites.push_back(new Monstre("slimePurple"));
+	(entites.at(2))->setPosition(300,448);
 
 
 }

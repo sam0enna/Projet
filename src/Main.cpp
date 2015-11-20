@@ -64,9 +64,9 @@ int main() {
 			
 			vue.setCenter(position);
 			
-			sf::Music music;
-			if (music.openFromFile("res/music.wav"))
-				music.play();
+			//sf::Music music;
+			//if (music.openFromFile("res/music.wav"))
+				//music.play();
 		}
 		window.setView(vue);
         // on dessine le niveau

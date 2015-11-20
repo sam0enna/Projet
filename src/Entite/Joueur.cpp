@@ -93,11 +93,13 @@ void Joueur::collisionEntites(vector<Entite*>* entites)
 	{
 		if((*it)->getSprite().getGlobalBounds().intersects(sprite.getGlobalBounds()))//collision avec un bloc cassable
 		{	
-			if(Etoile* e = dynamic_cast<Etoile*>(*it) ){
+			modifierVie((*it)->doAction());
+			if(Etoile* e = dynamic_cast<Etoile*>((*it))){
 				it = entites->erase(it);
 				delete e;
-				viePlus();
-			}	
+			}else{
+				setPosition(0,448);
+			}
 		}
 		else
 			++it;
@@ -117,4 +119,8 @@ void Joueur::vieMoins()
 void Joueur::viePlus()
 {
 	++vie;
+}
+
+void Joueur::modifierVie(int i){
+	vie+=i;
 }

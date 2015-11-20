@@ -10,6 +10,6 @@ Etoile::Etoile(){
 
 Etoile::~Etoile(){}
 
-void Etoile::draw(RenderWindow& window){
-	window.draw(sprite);
+int Etoile::doAction(){
+	return action->doAction();
 }

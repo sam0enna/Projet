@@ -30,6 +30,7 @@ class Joueur
     int getVie();
     void vieMoins();
     void viePlus();
+    void modifierVie(int i);
     
     private :
 		Texture stop;

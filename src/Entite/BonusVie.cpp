@@ -4,6 +4,6 @@ BonusVie::BonusVie(){}
 
 BonusVie::~BonusVie(){}
 
-void BonusVie::doAction(Joueur* j){
-	j->viePlus();
+int BonusVie::doAction(){
+	return 1;
 }

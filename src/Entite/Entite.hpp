@@ -1,4 +1,3 @@
-class Joueur;
 #ifndef ENTITE_H
 #define ENTITE_H
 
@@ -17,9 +16,9 @@ class Entite
 		Entite();
 		~Entite();
 		Sprite getSprite();
-	    virtual void draw(RenderWindow& window);
+	    void draw(RenderWindow& window);
 	    void setPosition(int,int);
-	    void doAction(Joueur* j);
+	    virtual int doAction();
 	    
 	protected:
 		Sprite sprite;

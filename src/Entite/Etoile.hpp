@@ -13,8 +13,7 @@ class Etoile : public Entite{
 	public:
 		Etoile();
 		~Etoile();
-		void setPosition(int x, int y);
-		void draw(RenderWindow& window);
+		int doAction();
 	    
 	protected:
 		Texture star;
