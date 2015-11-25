@@ -48,6 +48,11 @@ int main() {
 							manager.getCurrentScreen()->move(5,0);
 							break;
 							
+						case Keyboard::Up:
+							manager.getCurrentScreen()->haut();
+							cout<<"up"<<endl;
+							break;
+							
 						default:
 							break;
 					}

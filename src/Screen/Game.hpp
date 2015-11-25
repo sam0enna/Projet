@@ -26,6 +26,7 @@ class Game : public ScreenState
 		void draw(RenderWindow &window);
 		void move(int x,int y);
 		Joueur* getJoueur();
+		void haut();
 		
 	private :
 		TileMap map;

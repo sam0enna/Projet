@@ -12,6 +12,9 @@ Joueur::Joueur()
     sprite.scale(0.25f,0.25f);
     animation = JOUEUR_STOP;
     vie = 3;
+    velocity = Vector2f(0,0);
+    gauche = true;
+    droite = true;
 }
 
 Joueur::~Joueur() 
@@ -30,7 +33,7 @@ Vector2f Joueur::getPosition()
 
 void Joueur::move(int x, int y)
 {
-	if(x>0){
+	if(x>0 && droite || x<0 && gauche){
 		switch(animation)
 		{
 			case JOUEUR_MARCHE_1:
@@ -47,13 +50,13 @@ void Joueur::move(int x, int y)
 				sprite.setTexture(marche1);
 				animation = JOUEUR_MARCHE_1;
 		}	
+		velocity.x += x;
 	}
-	
-	sprite.move(x,y);
 }
 
 void Joueur::draw(RenderWindow &window)
 {
+	update();
 	window.draw(sprite);
 }
 
@@ -76,10 +79,18 @@ void Joueur::collisionBloc(vector<Bloc*>* blocs,int x,int y)
 			delete b;
 			
 		}
-		else if((*it)->getSprite()->getGlobalBounds().intersects(sprite.getGlobalBounds()))//collision avec un bloc neutre
+		else if((*it)->getSprite()->getGlobalBounds().intersects(sprite.getGlobalBounds()))
 		{
-			sprite.move(-x,-y);//annulation du mouvement
-			++it;
+			if((*it)->getSprite()->getGlobalBounds().left <= sprite.getGlobalBounds().left+sprite.getGlobalBounds().height)//collision avec un bloc neutre
+			{
+				droite = false;//annulation du mouvement
+				++it;
+			}
+			else if((*it)->getSprite()->getGlobalBounds().left+(*it)->getSprite()->getGlobalBounds().height >= sprite.getGlobalBounds().left)
+			{
+				gauche = false;//annulation du mouvement
+				++it;
+			}
 		}
 		else
 			++it;
@@ -123,4 +134,44 @@ void Joueur::viePlus()
 
 void Joueur::modifierVie(int i){
 	vie+=i;
+}
+
+void Joueur::jump(){	
+	if(onGround()){
+		velocity.y = -12;
+	}
+}
+
+void Joueur::endJump(){
+	if(velocity.y<-6){
+		velocity.y = -6.0;
+	}
+}
+
+bool Joueur::onGround(){
+	return getPosition().y == 448;
+}
+
+void Joueur::update(){
+	velocity.y += gravity;
+	sprite.move(velocity.x,velocity.y);
+	if(Keyboard::isKeyPressed(Keyboard::Left)){
+		if(gauche){
+			velocity.x = -5;
+			droite = true;
+		}
+	}
+	else if(Keyboard::isKeyPressed(Keyboard::Right)){ 
+		if(droite){
+			velocity.x = 5;
+			gauche = true;
+		}
+	}
+	else 
+		velocity.x = 0;
+	if(getPosition().y >448)
+	{
+		setPosition(getPosition().x,448);
+		velocity.y = 0;
+	}
 }

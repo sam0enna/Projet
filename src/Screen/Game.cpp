@@ -34,6 +34,7 @@ void Game::load()
 					1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
             };
 
+   
     // on crée la tilemap avec le niveau précédemment défini
     map;
     if (!map.load("res/tileset_ground.png", Vector2u(128, 128), level, 40, 16))
@@ -92,13 +93,10 @@ void Game::draw(RenderWindow &window)
 	perso->draw(window);
 	for(vector<Entite*>::iterator at = entites.begin(); at!=entites.end();++at){
 		(*at)->draw(window);
-	
+	}
 	for(vector<Bloc*>::iterator it = blocs.begin(); it!=blocs.end();++it){
 		(*it)->display(window);
 	}	
-}
-		
-	
 }
 
 void Game::move(int x,int y)
@@ -109,9 +107,12 @@ void Game::move(int x,int y)
 	perso->collisionEntites(&entites);
 }
 
+void Game::haut()
+{
+	perso->jump();
+}
+
 Joueur* Game::getJoueur()
 {
 	return perso;
 }
-
-

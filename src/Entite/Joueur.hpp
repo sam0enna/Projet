@@ -1,6 +1,7 @@
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 #include <stdlib.h>
+#include <iostream>
 #include <vector>
 
 #include "Etoile.hpp"
@@ -31,6 +32,10 @@ class Joueur
     void vieMoins();
     void viePlus();
     void modifierVie(int i);
+    void jump();
+    void endJump();
+    bool onGround();
+    void update();
     
     private :
 		Texture stop;
@@ -39,5 +44,9 @@ class Joueur
 		int animation;
 		int vie;
 		Sprite sprite;
+		Vector2f velocity;
+		const float gravity = 1.0f;
+		bool gauche;
+		bool droite;
  
 };
