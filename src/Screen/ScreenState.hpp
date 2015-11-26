@@ -6,6 +6,7 @@
 
 #define MENU 0
 #define GAME 1
+#define FIN 2
 
 using namespace std;
 using namespace sf;

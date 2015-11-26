@@ -33,9 +33,9 @@ class Joueur
     void viePlus();
     void modifierVie(int i);
     void jump();
-    void endJump();
     bool onGround();
     void update();
+    bool estMort();
     
     private :
 		Texture stop;

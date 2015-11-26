@@ -142,11 +142,6 @@ void Joueur::jump(){
 	}
 }
 
-void Joueur::endJump(){
-	if(velocity.y<-6){
-		velocity.y = -6.0;
-	}
-}
 
 bool Joueur::onGround(){
 	return getPosition().y == 448;
@@ -174,4 +169,8 @@ void Joueur::update(){
 		setPosition(getPosition().x,448);
 		velocity.y = 0;
 	}
+}
+
+bool Joueur::estMort(){
+	return vie <= 0;
 }

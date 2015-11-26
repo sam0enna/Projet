@@ -9,6 +9,7 @@
 #include "Screen/ScreenState.hpp"
 #include "Screen/Menu.hpp"
 #include "Screen/Game.hpp"
+#include "Screen/Fin.hpp"
 
 using namespace std;
 using namespace sf;
@@ -50,7 +51,6 @@ int main() {
 							
 						case Keyboard::Up:
 							manager.getCurrentScreen()->haut();
-							cout<<"up"<<endl;
 							break;
 							
 						default:
@@ -61,13 +61,21 @@ int main() {
         }
         
         if(Game* scene = dynamic_cast<Game*>(manager.getCurrentScreen())){
-			Vector2f position  = scene->getJoueur()->getPosition();
-			if(position.x < 320)
-				position.x = 320;
-			if(position.y > 240)
-				position.y = 240;
-			
-			vue.setCenter(position);
+			if(scene->estFini())
+				manager.setCurrentScreen(new Fin(true));
+			else if(scene->perdu()){
+				cout<<"mort"<<endl;
+				manager.setCurrentScreen(new Fin(false));
+			}
+			else{
+				Vector2f position  = scene->getJoueur()->getPosition();
+				if(position.x < 320)
+					position.x = 320;
+				if(position.y > 240)
+					position.y = 240;
+				
+				vue.setCenter(position);
+			}
 			
 			//sf::Music music;
 			//if (music.openFromFile("res/music.wav"))

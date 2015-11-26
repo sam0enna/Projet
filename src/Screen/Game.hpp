@@ -28,6 +28,8 @@ class Game : public ScreenState
 		void move(int x,int y);
 		Joueur* getJoueur();
 		void haut();
+		bool estFini();
+		bool perdu();
 		
 	private :
 		TileMap map;
@@ -38,6 +40,8 @@ class Game : public ScreenState
 		Joueur* perso;
 		vector<Bloc*> blocs;
 		vector<Entite*> entites;
+		bool fin;
+		bool victoire;
 
 };
 #endif //GAME_H

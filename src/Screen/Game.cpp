@@ -4,6 +4,8 @@ Game::Game()
 {
 	type = GAME;
 	perso = new Joueur();
+	fin = false;
+	victoire = false;
 }
 
 Game::~Game()
@@ -114,4 +116,12 @@ void Game::haut()
 Joueur* Game::getJoueur()
 {
 	return perso;
+}
+
+bool Game::estFini(){
+	return fin;
+}
+
+bool Game::perdu(){
+	return perso->estMort();
 }
