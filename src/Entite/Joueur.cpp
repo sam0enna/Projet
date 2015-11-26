@@ -68,7 +68,7 @@ void Joueur::anim_stop(RenderWindow &window)
     window.draw(sprite);
 }
 
-void Joueur::collisionBloc(vector<Bloc*>* blocs,int x,int y)
+void Joueur::collisionBloc(vector<Bloc*>* blocs)
 {
 	vector<Bloc*>::iterator it = blocs->begin();
 	while(it != blocs->end())
@@ -111,12 +111,20 @@ void Joueur::collisionEntites(vector<Entite*>* entites)
 	{
 		if((*it)->getSprite().getGlobalBounds().intersects(sprite.getGlobalBounds()))//collision avec un bloc cassable
 		{	
-			modifierVie((*it)->doAction());
 			if(Etoile* e = dynamic_cast<Etoile*>((*it))){
+				modifierVie((*it)->doAction());
 				it = entites->erase(it);
 				delete e;
-			}else{
-				setPosition(0,448);
+			}else if (Monstre* e = dynamic_cast<Monstre*>((*it))){
+				if(onGround() && e->estVivant())
+				{
+					setPosition(0,448);
+				}
+				else if(!onGround() &&e->estVivant()){
+					e->setMort();
+				}
+				modifierVie((*it)->doAction());
+				++it;
 			}
 		}
 		else

@@ -89,6 +89,8 @@ void Game::draw(RenderWindow &window)
 {
 	window.draw(background);
 	window.draw(map);
+	perso->collisionBloc(&blocs);
+	perso->collisionEntites(&entites);
 	perso->draw(window);
 	for(vector<Entite*>::iterator at = entites.begin(); at!=entites.end();++at){
 		(*at)->draw(window);
@@ -102,7 +104,7 @@ void Game::move(int x,int y)
 {
 	cout << perso->getVie() << endl;
 	perso->move(x,y);
-	perso->collisionBloc(&blocs,x,y);
+	perso->collisionBloc(&blocs);
 	perso->collisionEntites(&entites);
 }
 

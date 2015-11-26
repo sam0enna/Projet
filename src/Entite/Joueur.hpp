@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "Etoile.hpp"
+#include "Monstre.hpp"
 #include "../Bloc/Bloc.hpp"
 #include "../Bloc/Decorator.hpp"
 #include "../Bloc/Exit.hpp"
@@ -28,7 +29,7 @@ class Joueur
     void move(int x,int y);
     void draw(RenderWindow &window);
     void anim_stop(RenderWindow &window);
-    void collisionBloc(vector<Bloc*>* blocs,int x, int y);
+    void collisionBloc(vector<Bloc*>* blocs);
     void collisionEntites(vector<Entite*>* entites);
     int getVie();
     void vieMoins();

@@ -6,6 +6,7 @@
 #include "Entite.hpp"
 #include "ActionBonus.hpp"
 #include "MalusVie.hpp"
+#include "VieNeutre.hpp"
 
 using namespace std;
 using namespace sf;

@@ -61,14 +61,21 @@ int main() {
         }
         
         if(Game* scene = dynamic_cast<Game*>(manager.getCurrentScreen())){
-			if(scene->estFini())
+			Vector2f position;
+			if(scene->estFini()){
 				manager.setCurrentScreen(new Fin(true));
+				position.x = 320;
+				position.y = 240;
+				vue.setCenter(position);
+			}
 			else if(scene->perdu()){
-				cout<<"mort"<<endl;
 				manager.setCurrentScreen(new Fin(false));
+				position.x = 320;
+				position.y = 240;
+				vue.setCenter(position);
 			}
 			else{
-				Vector2f position  = scene->getJoueur()->getPosition();
+				position  = scene->getJoueur()->getPosition();
 				if(position.x < 320)
 					position.x = 320;
 				if(position.y > 240)

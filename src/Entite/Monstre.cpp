@@ -15,6 +15,8 @@ Monstre::~Monstre(){}
 void Monstre::setMort(){
 	sprite.setTexture(t_mort);
 	vivant = false;
+	delete action;
+	action = new VieNeutre();
 }
 
 bool Monstre::estVivant(){
@@ -22,10 +24,5 @@ bool Monstre::estVivant(){
 }
 
 int Monstre::doAction(){
-	int effet;
-	if(estVivant())
-		effet = action->doAction();
-	else
-		effet = 0;
-	return effet;
+	return action->doAction();
 }
