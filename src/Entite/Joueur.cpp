@@ -15,6 +15,7 @@ Joueur::Joueur()
     velocity = Vector2f(0,0);
     gauche = true;
     droite = true;
+    victoire_ = false;
 }
 
 Joueur::~Joueur() 
@@ -81,15 +82,21 @@ void Joueur::collisionBloc(vector<Bloc*>* blocs,int x,int y)
 		}
 		else if((*it)->getSprite()->getGlobalBounds().intersects(sprite.getGlobalBounds()))
 		{
-			if((*it)->getSprite()->getGlobalBounds().left <= sprite.getGlobalBounds().left+sprite.getGlobalBounds().height)//collision avec un bloc neutre
-			{
-				droite = false;//annulation du mouvement
+			if((*it)->estVictorieux()){
+				victoire_ = true;
 				++it;
 			}
-			else if((*it)->getSprite()->getGlobalBounds().left+(*it)->getSprite()->getGlobalBounds().height >= sprite.getGlobalBounds().left)
-			{
-				gauche = false;//annulation du mouvement
-				++it;
+			else{
+				if((*it)->getSprite()->getGlobalBounds().left <= sprite.getGlobalBounds().left+sprite.getGlobalBounds().height)//collision avec un bloc neutre
+				{
+					droite = false;//annulation du mouvement
+					++it;
+				}
+				else if((*it)->getSprite()->getGlobalBounds().left+(*it)->getSprite()->getGlobalBounds().height >= sprite.getGlobalBounds().left)
+				{
+					gauche = false;//annulation du mouvement
+					++it;
+				}
 			}
 		}
 		else
@@ -173,4 +180,9 @@ void Joueur::update(){
 
 bool Joueur::estMort(){
 	return vie <= 0;
+}
+
+
+bool Joueur::estVictorieux(){
+	return victoire_;
 }

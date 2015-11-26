@@ -40,8 +40,6 @@ class Game : public ScreenState
 		Joueur* perso;
 		vector<Bloc*> blocs;
 		vector<Entite*> entites;
-		bool fin;
-		bool victoire;
 
 };
 #endif //GAME_H

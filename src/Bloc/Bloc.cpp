@@ -37,3 +37,11 @@ Sprite* Bloc::getSprite()
 Vector2f Bloc::getPosition(){
 	return sprite->getPosition();
 }
+
+void Bloc::setVictoire(bool v){
+	victoire = v;
+}
+
+bool Bloc::estVictorieux(){
+	return victoire;
+}

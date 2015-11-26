@@ -9,6 +9,7 @@ class Bloc
 	private: 
 		Sprite* sprite;
 		bool cassable;
+		bool victoire;
 	
 	public:
 		Bloc (int x, int y);
@@ -19,6 +20,8 @@ class Bloc
 		void display(RenderWindow& window);
 		Sprite* getSprite();
 		Vector2f getPosition();
+		void setVictoire(bool);
+		bool estVictorieux();
 		
 };
 

@@ -6,6 +6,8 @@
 
 #include "Etoile.hpp"
 #include "../Bloc/Bloc.hpp"
+#include "../Bloc/Decorator.hpp"
+#include "../Bloc/Exit.hpp"
  
 #define JOUEUR_STOP 0
 #define JOUEUR_MARCHE_1 1
@@ -36,6 +38,7 @@ class Joueur
     bool onGround();
     void update();
     bool estMort();
+    bool estVictorieux();
     
     private :
 		Texture stop;
@@ -48,5 +51,6 @@ class Joueur
 		const float gravity = 1.0f;
 		bool gauche;
 		bool droite;
+		bool victoire_;
  
 };

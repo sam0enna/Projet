@@ -15,12 +15,15 @@ void Fin::load()
 {
 	if(!font.loadFromFile("res/Smart_Kid.otf"))
 		std::cout << "Impossible de charger le fichier \"Smart_Kid.otf\"" << std::endl;
-	if(victoire_)
+	if(victoire_){
+		cout<<"victoire"<<endl;
 		play.setString("YOU WIN");
+	}
 	else
 		play.setString("GAME OVER");
 	play.setFont(font);
 	play.setColor(Color::White);
+	play.setPosition(320,240);
 }
 
 void Fin::unload()
