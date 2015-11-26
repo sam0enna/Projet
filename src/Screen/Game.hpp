@@ -15,6 +15,7 @@
 #include "../Entite/Monstre.hpp"
 #include "../Bloc/Neutre.hpp"
 #include "../Bloc/Cassable.hpp"
+#include "../Bloc/Exit.hpp"
 
 class Game : public ScreenState 
 {

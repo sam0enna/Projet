@@ -1,6 +1,8 @@
 #include "Neutre.hpp"
 
-Neutre::Neutre(Bloc* bloc,sf::Texture& texture):Decorator(bloc,texture){
+Neutre::Neutre(Bloc* bloc):Decorator(bloc){
+	texture.loadFromFile("res/box_neutre.png");
+	bloc->getSprite()->setTexture(texture);
 }
 
 void Neutre::setCassable(){

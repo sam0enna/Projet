@@ -1,8 +1,7 @@
 #include "Decorator.hpp"
 
-Decorator::Decorator(Bloc* bloc,sf::Texture& texture){
+Decorator::Decorator(Bloc* bloc){
 	this->bloc = bloc;
-	this->bloc->getSprite()->setTexture(texture);
 }
 
 Decorator::~Decorator(){}

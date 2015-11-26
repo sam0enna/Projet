@@ -8,7 +8,7 @@ CXX = @ g++
 FLAGS = -std=c++0x
 SFMLFLAGS = -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 # Liste de tous les objets du projet
-OBJETS = TileMap Entite Monstre Etoile Joueur ActionBonus BonusVie MalusVie ScreenManager ScreenState Menu Bloc Decorator Neutre Cassable Game
+OBJETS = TileMap Entite Monstre Etoile Joueur ActionBonus BonusVie MalusVie ScreenManager ScreenState Menu Bloc Decorator Neutre Cassable Exit Game
 DEPENDANCES = $(foreach file, $(OBJETS), build/$(file).o)
 
 #---------------------------------------------------------
@@ -70,6 +70,9 @@ Neutre:
 	$(CXX) $(FLAGS) $(SFMLFLAGS) -o build/$@.o src/Bloc/$@.cpp -c
 
 Cassable:
+	$(CXX) $(FLAGS) $(SFMLFLAGS) -o build/$@.o src/Bloc/$@.cpp -c
+	
+Exit:
 	$(CXX) $(FLAGS) $(SFMLFLAGS) -o build/$@.o src/Bloc/$@.cpp -c
 	
 Game:

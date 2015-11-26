@@ -1,6 +1,8 @@
 #include "Cassable.hpp"
 
-Cassable::Cassable(Bloc* bloc,sf::Texture& texture):Decorator(bloc,texture){
+Cassable::Cassable(Bloc* bloc):Decorator(bloc){
+	texture.loadFromFile("res/box_cassable.png");
+	bloc->getSprite()->setTexture(texture);
 }
 
 void Cassable::setCassable(){

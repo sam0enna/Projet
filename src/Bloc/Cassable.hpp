@@ -7,7 +7,7 @@
 class Cassable : public Decorator {
 		
 	public :
-		Cassable(Bloc*,sf::Texture&);
+		Cassable(Bloc*);
 		~Cassable();
 		void setCassable();
 };

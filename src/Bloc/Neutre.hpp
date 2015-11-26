@@ -7,7 +7,7 @@
 class Neutre : public Decorator {
 		
 	public :
-		Neutre(Bloc*,sf::Texture& texture);
+		Neutre(Bloc*);
 		~Neutre();
 		void setCassable();
 };
