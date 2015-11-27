@@ -1,3 +1,10 @@
+/*!
+* \file BonusVie.hpp
+* \brief Fichier contenant la déclaration de la classe BonusVie
+* \author Samia Ennaji
+* \date 27.11.2015
+*/
+
 #ifndef BONUSVIE_H
 #define BONUSVIE_H
 
@@ -6,6 +13,10 @@
 using namespace std;
 using namespace sf;
 
+/*!
+* \class BonusVie
+* \brief classe qui définit le type BonusVie
+*/
 class BonusVie : public ActionBonus{
 			
 	public:
