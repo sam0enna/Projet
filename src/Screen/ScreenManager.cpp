@@ -57,7 +57,6 @@ void ScreenManager::setCurrentScreen(ScreenState* new_screen)
 		}		
 	}
 	else{
-		cout<<"chargement fin"<<endl;
 		delete currentScreen_;
 		currentScreen_ = new_screen;
 		loadScreen();

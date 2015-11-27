@@ -11,6 +11,7 @@
 #include "TileMap.hpp"
 #include "../Entite/Joueur.hpp"
 #include "../Entite/Entite.hpp"
+#include "../Entite/Champignon.hpp"
 #include "../Entite/Etoile.hpp"
 #include "../Entite/Monstre.hpp"
 #include "../Bloc/Neutre.hpp"

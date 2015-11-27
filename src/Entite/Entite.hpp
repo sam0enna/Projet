@@ -5,6 +5,7 @@
 #include "../Screen/ScreenState.hpp"
 #include "ActionBonus.hpp"
 #include "BonusVie.hpp"
+#include "BonusChamp.hpp"
 
 using namespace std;
 using namespace sf;

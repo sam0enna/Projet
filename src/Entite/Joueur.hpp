@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "Etoile.hpp"
+#include "Champignon.hpp"
 #include "Monstre.hpp"
 #include "../Bloc/Bloc.hpp"
 #include "../Bloc/Decorator.hpp"

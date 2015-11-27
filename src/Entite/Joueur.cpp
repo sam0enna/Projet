@@ -9,7 +9,7 @@ Joueur::Joueur()
     marche2.loadFromFile("res/Green/alienGreen_walk2.png");
     sprite.setTexture(stop);
     sprite.setOrigin(0,256);//coin inférieur gauche.
-    sprite.scale(0.25f,0.25f);
+    sprite.scale(0.3f,0.3f);
     animation = JOUEUR_STOP;
     vie = 3;
     velocity = Vector2f(0,0);
@@ -90,6 +90,7 @@ void Joueur::collisionBloc(vector<Bloc*>* blocs)
 				if((*it)->getSprite()->getGlobalBounds().left <= sprite.getGlobalBounds().left+sprite.getGlobalBounds().height)//collision avec un bloc neutre
 				{
 					droite = false;//annulation du mouvement
+					cout<<"collision gauche"<<endl;
 					++it;
 				}
 				else if((*it)->getSprite()->getGlobalBounds().left+(*it)->getSprite()->getGlobalBounds().height >= sprite.getGlobalBounds().left)
@@ -125,6 +126,11 @@ void Joueur::collisionEntites(vector<Entite*>* entites)
 				}
 				modifierVie((*it)->doAction());
 				++it;
+			}else{
+				float taille = (float)((*it)->doAction())/10.0f;
+				cout<<"taille:"<<taille<<endl;
+				sprite.scale(taille,taille);
+				it = entites->erase(it);
 			}
 		}
 		else
@@ -167,13 +173,13 @@ void Joueur::update(){
 	sprite.move(velocity.x,velocity.y);
 	if(Keyboard::isKeyPressed(Keyboard::Left)){
 		if(gauche){
-			velocity.x = -5;
+			velocity.x = -3;
 			droite = true;
 		}
 	}
 	else if(Keyboard::isKeyPressed(Keyboard::Right)){ 
 		if(droite){
-			velocity.x = 5;
+			velocity.x = 3;
 			gauche = true;
 		}
 	}
@@ -183,6 +189,11 @@ void Joueur::update(){
 	{
 		setPosition(getPosition().x,448);
 		velocity.y = 0;
+	}
+	
+	if(getPosition().x<0){
+		setPosition(0,getPosition().y);
+		velocity.x = 0;
 	}
 }
 

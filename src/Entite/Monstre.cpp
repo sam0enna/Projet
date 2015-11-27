@@ -5,7 +5,7 @@ Monstre::Monstre(string nom){
 	t_mort.loadFromFile("res/Ennemis/"+nom+"_dead.png");	
 	sprite.setTexture(t_vivant); 
 	sprite.setOrigin(0,128);
-	sprite.scale(0.25f,0.25f);	
+	sprite.scale(0.35f,0.35f);	
 	vivant = true;
 	action = new MalusVie();
 }

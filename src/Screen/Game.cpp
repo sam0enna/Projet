@@ -27,7 +27,7 @@ void Game::load()
 					7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,
 					7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,
 					7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,
-					7,7,7,7,56,48,48,48,48,48,48,48,48,48,48,48,48,48,40,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,
+					7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,
 					7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,
 					7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,
 					8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,
@@ -58,10 +58,10 @@ void Game::load()
 	//448 car il y a 16 rangées de tuiles, les deux dernières représentent le sol.
 	//on veut que le coin gauche du perso touche le sol (donc la 14eme rangée)
 	//14*32=448 (32 la taille d'une tuile)
-	blocs.push_back(new Bloc(500,448));
+	blocs.push_back(new Bloc(500,352));
 	blocs.push_back(new Bloc(60,448));
 	blocs.push_back(new Bloc(256,352));
-	blocs.push_back(new Bloc(800,448));
+	blocs.push_back(new Bloc(1250,448));
 	
 	(new Neutre(blocs.at(0)))->setCassable();
 	(new Cassable(blocs.at(1)))->setCassable();
@@ -69,14 +69,16 @@ void Game::load()
 	(new Exit(blocs.at(3)))->setCassable();
 	
 	entites.push_back(new Etoile());
-	(entites.at(0))->setPosition(63,448);
+	(entites.at(0))->setPosition(67,448);
 	
 	entites.push_back(new Etoile());
-	(entites.at(1))->setPosition(259,352);
+	(entites.at(1))->setPosition(259,340);
 	
 	entites.push_back(new Monstre("slimePurple"));
 	(entites.at(2))->setPosition(300,448);
 
+	entites.push_back(new Champignon());
+	(entites.at(3))->setPosition(400,448);
 
 }
 

@@ -42,11 +42,11 @@ int main() {
 							break;
 							
 						case Keyboard::Left:
-							manager.getCurrentScreen()->move(-5,0);
+							manager.getCurrentScreen()->move(-3,0);
 							break;
 						
 						case Keyboard::Right:
-							manager.getCurrentScreen()->move(5,0);
+							manager.getCurrentScreen()->move(3,0);
 							break;
 							
 						case Keyboard::Up:
