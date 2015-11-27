@@ -1,3 +1,9 @@
+/*!
+* \file ScreenState.hpp
+* \brief Fichier contenant la déclaration de la classe ScreenState
+* \author Samia Ennaji
+* \date 27.11.2015
+*/
 #ifndef SCREENSTATE_H
 #define SCREENSTATE_H
 
@@ -11,6 +17,10 @@
 using namespace std;
 using namespace sf;
 
+/*!
+* \class ScreenState
+* \brief classe abstraite qui sera hérité par les états
+*/
 class ScreenState
 {
 	public :
@@ -24,7 +34,7 @@ class ScreenState
 		virtual void draw(RenderWindow &window);
 		
 	protected:
-		int type;
+		int type;//!< le type d'écran
 	
 };
 
