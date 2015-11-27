@@ -1,3 +1,10 @@
+/*!
+* \file Joueur.hpp
+* \brief Fichier contenant la déclaration de la classe Joueur
+* \author Samia Ennaji
+* \date 27.11.2015
+*/
+
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 #include <stdlib.h>
@@ -18,6 +25,10 @@
 using namespace std;
 using namespace sf;
  
+/*!
+* \class Joueur
+* \brief classe qui définit le type Joueur
+*/
 class Joueur
 {
     public :
@@ -43,16 +54,16 @@ class Joueur
     bool estVictorieux();
     
     private :
-		Texture stop;
-		Texture marche1;
-		Texture marche2;
-		int animation;
-		int vie;
-		Sprite sprite;
-		Vector2f velocity;
-		const float gravity = 1.0f;
-		bool gauche;
-		bool droite;
-		bool victoire_;
+		Texture stop; //!< texture du personnage à l'arrêt
+		Texture marche1;//!< texture de marche
+		Texture marche2;//!<texture de marche
+		int animation;//!< Etat du joueur
+		int vie;//!< vie du joueur
+		Sprite sprite;//!< sprite du joueur
+		Vector2f velocity;//!< vélocité du joueur
+		const float gravity = 1.0f;//!< gravité 
+		bool gauche;//!< test si déplacement à gauche possible
+		bool droite;//!< test si déplacement à droite possible
+		bool victoire_;//!< paramètre de victoire
  
 };

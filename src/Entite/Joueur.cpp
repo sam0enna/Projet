@@ -1,7 +1,18 @@
+/*!
+* \file Joueur.cpp
+* \brief Fichier contenant l'implémentation de la classe Joueur
+* \author Samia Ennaji
+* \date 27.11.2015
+*/
+
 #include "Joueur.hpp"
 using namespace std;
 using namespace sf;
 
+//--------------------------------------------------
+/*!
+* \brief Constructeur
+*/
 Joueur::Joueur()
 {
     stop.loadFromFile("res/Green/alienGreen_front.png");
@@ -18,20 +29,40 @@ Joueur::Joueur()
     victoire_ = false;
 }
 
+//--------------------------------------------------
+/*!
+* \brief Destructeur
+*/
 Joueur::~Joueur() 
 {
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui modifie la position du joueur
+* \param x la coordonnée x
+* \param y la coordonnée y
+*/
 void Joueur::setPosition(int x,int y)
 {
 	sprite.setPosition(x,y);	
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui retourne la position du joueur
+*/
 Vector2f Joueur::getPosition()
 {
 	return sprite.getPosition();
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui déplace le joueur
+* \param x la coordonnée x
+* \param y la coordonnée y
+*/
 void Joueur::move(int x, int y)
 {
 	if(x>0 && droite || x<0 && gauche){
@@ -55,12 +86,22 @@ void Joueur::move(int x, int y)
 	}
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui affiche le joueur
+* \param window la fenêtre
+*/
 void Joueur::draw(RenderWindow &window)
 {
 	update();
 	window.draw(sprite);
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui réinitialise l'animation du joueur
+* \param window la fenêtre
+*/
 void Joueur::anim_stop(RenderWindow &window)
 {	
     sprite.setTexture(stop);
@@ -68,6 +109,11 @@ void Joueur::anim_stop(RenderWindow &window)
     window.draw(sprite);
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui test les collisions avec les blocs
+* \param blocs les blocs du niveau
+*/
 void Joueur::collisionBloc(vector<Bloc*>* blocs)
 {
 	vector<Bloc*>::iterator it = blocs->begin();
@@ -105,6 +151,11 @@ void Joueur::collisionBloc(vector<Bloc*>* blocs)
 	}
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui teste les collisions avec les entités
+* \param entités les entités du niveau
+*/
 void Joueur::collisionEntites(vector<Entite*>* entites)
 {
 	vector<Entite*>::iterator it = entites->begin();
@@ -138,36 +189,64 @@ void Joueur::collisionEntites(vector<Entite*>* entites)
 	}
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui retourne la vie du joueur
+*/
 int Joueur::getVie()
 {
 	return vie;
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui décrémente la vie du joueur
+*/
 void Joueur::vieMoins()
 {
 	--vie;
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui incrémente la vie du joueur
+*/
 void Joueur::viePlus()
 {
 	++vie;
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui modifie la vie du joueur
+* \param i l'incrément de la vie
+*/
 void Joueur::modifierVie(int i){
 	vie+=i;
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui réalise le saut du joueur
+*/
 void Joueur::jump(){	
 	if(onGround()){
 		velocity.y = -12;
 	}
 }
 
-
+//--------------------------------------------------
+/*!
+* \brief Méthode qui teste si le joueur est au sol
+*/
 bool Joueur::onGround(){
 	return getPosition().y == 448;
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui met à jour la position du joueur
+*/
 void Joueur::update(){
 	velocity.y += gravity;
 	sprite.move(velocity.x,velocity.y);
@@ -197,11 +276,18 @@ void Joueur::update(){
 	}
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui teste si le joueur est mort
+*/
 bool Joueur::estMort(){
 	return vie <= 0;
 }
 
-
+//--------------------------------------------------
+/*!
+* \brief Méthode qui teste si le joueur a gagné
+*/
 bool Joueur::estVictorieux(){
 	return victoire_;
 }
