@@ -1,3 +1,10 @@
+/*!
+* \file Monstre.hpp
+* \brief Fichier contenant la déclaration de la classe Monstre
+* \author Samia Ennaji
+* \date 27.11.2015
+*/
+
 #ifndef MONSTRE_H
 #define MONSTRE_H
 
@@ -11,6 +18,10 @@
 using namespace std;
 using namespace sf;
 
+/*!
+* \class Monstre
+* \brief classe qui définit le type Monstre
+*/
 class Monstre : public Entite
 {
 			
@@ -25,9 +36,9 @@ class Monstre : public Entite
 	    
 	    
 	private:
-		Texture t_vivant;
-		Texture t_mort;
-		bool vivant;
+		Texture t_vivant;//!< texture du monstre vivant
+		Texture t_mort;//!< texture du monstre mort
+		bool vivant;//!< état du monstre
 
 		
 };
