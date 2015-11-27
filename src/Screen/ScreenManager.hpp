@@ -1,9 +1,8 @@
 /*!
-* \file 
-* \brief 
-* \author 
-* \author 
-* \date 
+* \file ScreenManager.hpp
+* \brief Fichier contenant la déclaration de la classe ScreenManager
+* \author Samia Ennaji
+* \date 27.11.2015
 */
 
 #ifndef SCREENMANAGER_H
@@ -21,8 +20,8 @@ using namespace std;
 using namespace sf;
 
 /*!
-* \class 
-* \brief 
+* \class ScreenManager
+* \brief classe qui gère les écrans suivant le pattern state
 */
 class ScreenManager
 {
@@ -36,7 +35,7 @@ class ScreenManager
 		void draw(RenderWindow &window);
 	
 	private :		
-		ScreenState* currentScreen_;//!<
+		ScreenState* currentScreen_;//!< l'écran courant
 };
 
 #endif //SCREENMANAGER_H
