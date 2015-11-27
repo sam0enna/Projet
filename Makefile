@@ -93,7 +93,7 @@ Fin:
 	$(CXX) $(FLAGS) $(SFMLFLAGS) -o build/$@.o src/Screen/$@.cpp -c
 
 Main: $(OBJETS) 
-	$(CXX) $(FLAGS) src/$@.cpp $(DEPENDANCES) $(SFMLFLAGS) -o main
+	$(CXX) $(FLAGS) src/$@.cpp $(DEPENDANCES) $(SFMLFLAGS) -o main -I SFML-2.3.2/include
 	@clear
 	@ ./main
 	

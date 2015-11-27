@@ -133,13 +133,13 @@ void Joueur::collisionBloc(vector<Bloc*>* blocs)
 				++it;
 			}
 			else{
-				if((*it)->getSprite()->getGlobalBounds().left <= sprite.getGlobalBounds().left+sprite.getGlobalBounds().height)//collision avec un bloc neutre
+				if((*it)->getSprite()->getGlobalBounds().left <= sprite.getGlobalBounds().left+sprite.getGlobalBounds().width)//collision avec un bloc neutre
 				{
 					droite = false;//annulation du mouvement
 					cout<<"collision gauche"<<endl;
 					++it;
 				}
-				else if((*it)->getSprite()->getGlobalBounds().left+(*it)->getSprite()->getGlobalBounds().height >= sprite.getGlobalBounds().left)
+				else if((*it)->getSprite()->getGlobalBounds().left+(*it)->getSprite()->getGlobalBounds().width >= sprite.getGlobalBounds().left)
 				{
 					gauche = false;//annulation du mouvement
 					++it;

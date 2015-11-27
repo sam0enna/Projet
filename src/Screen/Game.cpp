@@ -131,7 +131,7 @@ void Game::load()
 	(entites.at(3))->setPosition(800,448);
 	
 	entites.push_back(new Monstre("slimeGreen"));
-	(entites.at(4))->setPosition(540,448);
+	(entites.at(4))->setPosition(640,448);
 
 	entites.push_back(new Champignon());
 	(entites.at(5))->setPosition(400,340);
