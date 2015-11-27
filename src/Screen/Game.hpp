@@ -1,3 +1,10 @@
+/*!
+* \file Game.hpp
+* \brief Fichier contenant la déclaration de la classe Game
+* \author Samia Ennaji
+* \date 27.11.2015
+*/
+
 #ifndef GAME_H
 #define GAME_H
 #include <iostream>
@@ -18,6 +25,10 @@
 #include "../Bloc/Cassable.hpp"
 #include "../Bloc/Exit.hpp"
 
+/*!
+* \class Game
+* \brief classe qui définit l'écran de jeu Game
+*/
 class Game : public ScreenState 
 {
 	public :
@@ -33,14 +44,12 @@ class Game : public ScreenState
 		bool perdu();
 		
 	private :
-		TileMap map;
-		Texture texture;
-		Texture neutre;
-		Texture cassable;
-		Sprite background;
-		Joueur* perso;
-		vector<Bloc*> blocs;
-		vector<Entite*> entites;
+		TileMap map;//!< le niveau
+		Texture texture; //!< la texture de l'arrière plan
+		Sprite background;//!< l'arrière plan
+		Joueur* perso;//!< le joueur
+		vector<Bloc*> blocs;//!< les blocs du niveau
+		vector<Entite*> entites;//!< les entites du niveau
 
 };
 #endif //GAME_H

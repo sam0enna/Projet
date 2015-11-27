@@ -1,16 +1,35 @@
+/*!
+* \file Game.cpp
+* \brief Fichier contenant l'implémentation de la classe Game
+* \author Samia Ennaji
+* \date 27.11.2015
+*/
+
 #include "Game.hpp"
 
+//--------------------------------------------------
+/*!
+* \brief Constructeur
+*/
 Game::Game()
 {
 	type = GAME;
 	perso = new Joueur();
 }
 
+//--------------------------------------------------
+/*!
+* \brief Destructeur
+*/
 Game::~Game()
 {
 	unload();
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui charge les composants
+*/
 void Game::load()
 {
 // on définit le niveau à l'aide de numéro de tuiles
@@ -82,11 +101,18 @@ void Game::load()
 
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui décharge les composants
+*/
 void Game::unload()
-{
-	
+{	
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui affiche les composants
+*/
 void Game::draw(RenderWindow &window)
 {
 	window.draw(background);
@@ -102,6 +128,10 @@ void Game::draw(RenderWindow &window)
 	}	
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui gère les déplacements gauche droite
+*/
 void Game::move(int x,int y)
 {
 	cout << perso->getVie() << endl;
@@ -110,20 +140,36 @@ void Game::move(int x,int y)
 	perso->collisionEntites(&entites);
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui gère les déplacements haut
+*/
 void Game::haut()
 {
 	perso->jump();
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui retourne le joueur
+*/
 Joueur* Game::getJoueur()
 {
 	return perso;
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui teste si le joueur a trouvé la sortie
+*/
 bool Game::estFini(){
 	return perso->estVictorieux();
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui teste si le joueur est mort
+*/
 bool Game::perdu(){
 	return perso->estMort();
 }
