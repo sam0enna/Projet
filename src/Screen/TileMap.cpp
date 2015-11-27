@@ -1,5 +1,21 @@
+/*!
+* \file TileMap.cpp
+* \brief Fichier contenant l'implémentation de la classe TileMap
+* \author Samia Ennaji
+* \date 27.11.2015
+*/
+
 #include "TileMap.hpp"
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui crée un niveau via un tileset
+* \param tileset le fichier image utilisé pour les textures
+* \param tileSize la taille d'une tuile
+* \param tiles un tableau représentant la grille du niveau où chaque entier fait référence à une texture
+* \param width la largeur de la grille
+* \param height la hauteur de la grille
+*/
 bool TileMap::load(const string& tileset, Vector2u tileSize, const int* tiles, unsigned int width, unsigned int height)
     {
         // on charge la texture du tileset
@@ -40,6 +56,12 @@ bool TileMap::load(const string& tileset, Vector2u tileSize, const int* tiles, u
         return true;
     }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui affiche le niveau
+* \param target objet qui affiche le niveau
+* \param states défini les propriétés du niveau
+*/
 void TileMap::draw(RenderTarget& target, RenderStates states) const
 {
         // on applique la transformation
