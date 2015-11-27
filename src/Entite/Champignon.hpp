@@ -1,3 +1,10 @@
+/*!
+* \file Champignon.hpp
+* \brief Fichier contenant la déclaration de la classe Champignon
+* \author Samia Ennaji
+* \date 27.11.2015
+*/
+
 #ifndef CHAMP_H
 #define CHAMP_H
 
@@ -8,6 +15,10 @@
 using namespace std;
 using namespace sf;
 
+/*!
+* \class Champignon
+* \brief classe qui définit le type Champignon
+*/
 class Champignon : public Entite{
 			
 	public:
@@ -16,7 +27,7 @@ class Champignon : public Entite{
 		int doAction();
 	    
 	protected:
-		Texture champ;
+		Texture champ;//!< texture du champignon
 		
 };
 
