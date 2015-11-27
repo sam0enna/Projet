@@ -1,3 +1,10 @@
+/*!
+* \file Menu.hpp
+* \brief Fichier contenant la déclaration de la classe Menu
+* \author Samia Ennaji
+* \date 27.11.2015
+*/
+
 #ifndef MENU_H
 #define MENU_H
 #include <iostream>
@@ -7,6 +14,10 @@
 
 #include "ScreenState.hpp"
 
+/*!
+* \class Menu
+* \brief classe qui définit l'écran de jeu Menu
+*/
 class Menu : public ScreenState 
 {
 	public :
@@ -15,11 +26,12 @@ class Menu : public ScreenState
 		void load();
 		void unload();
 		void move(int x,int y);
+		void haut();
 		void draw(RenderWindow &window);
 		
 	private :
-		sf::Font font;
-		sf::Text play;
+		sf::Font font;//!< police utilisé
+		sf::Text play;//!< le texte à afficher
 
 };
 #endif //MENU_H
