@@ -78,6 +78,8 @@ int main() {
 				position  = scene->getJoueur()->getPosition();
 				if(position.x < 320)
 					position.x = 320;
+				if(position.x > 960)
+					position.x = 960;
 				if(position.y > 240)
 					position.y = 240;
 				

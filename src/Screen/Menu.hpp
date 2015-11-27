@@ -32,6 +32,8 @@ class Menu : public ScreenState
 	private :
 		sf::Font font;//!< police utilisé
 		sf::Text play;//!< le texte à afficher
+		Texture texture; //!< la texture de l'arrière plan
+		Sprite background;//!< l'arrière plan
 
 };
 #endif //MENU_H

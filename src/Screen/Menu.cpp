@@ -31,11 +31,23 @@ Menu::~Menu()
 */
 void Menu::load()
 {
+	
+	// Chargement de l'arrière plan
+	texture;
+	if (!texture.loadFromFile("res/blue_grass.png", sf::IntRect(0, 272, 1024, 480)))
+		std::cout << "Impossible de charger le fichier \"blue_grass.png\"" << std::endl;
+	texture.setRepeated(true);
+	// chargement de la texture dans un sprite
+	background.setTexture(texture);
+	background.setTextureRect({ 0, 0, 1280, 480 });//la texture se répète dans un bloc de 1280*480
+	
 	if(!font.loadFromFile("res/Smart_Kid.otf"))
 		std::cout << "Impossible de charger le fichier \"Smart_Kid.otf\"" << std::endl;
 	play.setString("PRESS SPACE TO PLAY");
 	play.setFont(font);
-	play.setColor(Color::White);
+	sf::Color color(128, 128, 128);
+	play.setColor(color);
+	play.setPosition(190,240);
 }
 
 //--------------------------------------------------
@@ -64,5 +76,6 @@ void Menu::haut(){}
 */
 void Menu::draw(RenderWindow &window)
 {
+	window.draw(background);
 	window.draw(play);
 }

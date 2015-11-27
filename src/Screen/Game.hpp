@@ -45,6 +45,7 @@ class Game : public ScreenState
 		
 	private :
 		TileMap map;//!< le niveau
+		TileMap decor;//!< le décor du niveau
 		Texture texture; //!< la texture de l'arrière plan
 		Sprite background;//!< l'arrière plan
 		Joueur* perso;//!< le joueur
