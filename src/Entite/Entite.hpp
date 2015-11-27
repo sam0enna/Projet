@@ -1,3 +1,10 @@
+/*!
+* \file Entite.hpp
+* \brief Fichier contenant la déclaration de la classe Entite
+* \author Samia Ennaji
+* \date 27.11.2015
+*/
+
 #ifndef ENTITE_H
 #define ENTITE_H
 
@@ -10,6 +17,10 @@
 using namespace std;
 using namespace sf;
 
+/*!
+* \class Entite
+* \brief classe qui définit le type Entite
+*/
 class Entite
 {
 			
@@ -22,8 +33,8 @@ class Entite
 	    virtual int doAction();
 	    
 	protected:
-		Sprite sprite;
-		ActionBonus* action;
+		Sprite sprite;//!< le sprite de l'entité
+		ActionBonus* action;//!< l'action bonus
 		
 };
 
