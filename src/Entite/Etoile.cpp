@@ -1,5 +1,16 @@
+/*!
+* \file Etoile.cpp
+* \brief Fichier contenant l'implémentation de la classe Etoile
+* \author Samia Ennaji
+* \date 27.11.2015
+*/
+
 #include "Etoile.hpp"
 
+//--------------------------------------------------
+/*!
+* \brief Constructeur
+*/
 Etoile::Etoile(){
 	star.loadFromFile("res/star.png");
 	sprite.setTexture(star);
@@ -8,8 +19,16 @@ Etoile::Etoile(){
 	action = new BonusVie();
 }
 
+//--------------------------------------------------
+/*!
+* \brief Destructeur
+*/
 Etoile::~Etoile(){}
 
+//--------------------------------------------------
+/*!
+* \brief action de l'étoile
+*/
 int Etoile::doAction(){
 	return action->doAction();
 }

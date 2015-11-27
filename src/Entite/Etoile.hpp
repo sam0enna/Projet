@@ -1,3 +1,10 @@
+/*!
+* \file Etoile.hpp
+* \brief Fichier contenant la déclaration de la classe Etoile
+* \author Samia Ennaji
+* \date 27.11.2015
+*/
+
 #ifndef ETOILE_H
 #define ETOILE_H
 
@@ -8,6 +15,10 @@
 using namespace std;
 using namespace sf;
 
+/*!
+* \class Etoile
+* \brief classe qui définit le type Etoile
+*/
 class Etoile : public Entite{
 			
 	public:
@@ -16,7 +27,7 @@ class Etoile : public Entite{
 		int doAction();
 	    
 	protected:
-		Texture star;
+		Texture star;//!< texture de l'étoile
 		
 };
 
