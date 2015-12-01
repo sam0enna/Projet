@@ -1,3 +1,11 @@
+/*!
+* \file Main.cpp
+* \brief Application
+* \author Samia Ennaji
+* \author Michelle Sonia Guiadem Kaptue
+* \date 27.11.2015
+*/
+
 #include <iostream>
 
 #include <SFML/System.hpp>
