@@ -17,7 +17,7 @@ DEPENDANCES = $(foreach file, $(OBJETS), build/$(file).o)
 all: prepare Main
 
 exec:
-	./main
+	export LD_LIBRARY_PATH=SFML-2.3.2/lib && ./main
 #---------------------------------------------------------
 # Création du dossier de build
 #---------------------------------------------------------
